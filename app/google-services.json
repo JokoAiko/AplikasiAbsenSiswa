@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "833435879374",
+    "project_id": "aplikasi-absen-siswa",
+    "storage_bucket": "aplikasi-absen-siswa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833435879374:android:9d27d280ced36e258c4d9f",
+        "android_client_info": {
+          "package_name": "com.example.aplikasiabsensiswa"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjTj3iIgMeKW11pMoXWs63fpsx3OTbETk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

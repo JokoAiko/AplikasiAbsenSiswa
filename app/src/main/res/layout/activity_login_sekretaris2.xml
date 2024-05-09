@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    tools:context=".sekretaris.LoginSekretaris">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN SEKRETARIS"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+
+
+
+    <EditText
+        android:id="@+id/etNama"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/roundedbox"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:hint="Masukkan Nama"
+        />
+
+
+    <EditText
+        android:id="@+id/etNIS"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/roundedbox"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:hint="Masukkan NISN"
+        />
+
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/roundedbox"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:hint="Masukkan Password"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Belum punya akun? Daftar dulu yuk!"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal">
+
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_rounded"
+            android:layout_marginEnd="40dp"/>
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_rounded"/>
+
+    </LinearLayout>
+
+</LinearLayout>

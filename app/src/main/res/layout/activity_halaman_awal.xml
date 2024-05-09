@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40A2E3"
+    android:orientation="vertical"
+    tools:context=".HalamanAwal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="Masuk sebagai :"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <Button
+        android:id="@+id/btnGuru"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:text="GURU"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/button_rounded"
+        />
+
+    <Button
+        android:id="@+id/btnSekretaris"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:text="SEKRETARIS"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        />
+
+    <Button
+        android:id="@+id/btnSiswa"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:text="SISWA"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        />
+
+
+
+</LinearLayout>
