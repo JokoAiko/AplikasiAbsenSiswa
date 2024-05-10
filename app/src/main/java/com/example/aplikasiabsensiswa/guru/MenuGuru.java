@@ -3,6 +3,7 @@ package com.example.aplikasiabsensiswa.guru;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -15,6 +16,8 @@ public class MenuGuru extends AppCompatActivity {
 
     TextView tvNama, tvNIP;
     Button btnLogout;
+
+    Button btnSekretaris;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_NAMA = "nama";
@@ -29,6 +32,7 @@ public class MenuGuru extends AppCompatActivity {
         tvNama = findViewById(R.id.tvNama);
         tvNIP = findViewById(R.id.tvNIP);
         btnLogout = findViewById(R.id.btnLogout);
+        btnSekretaris = findViewById(R.id.btnSekretaris);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String nama = sharedPreferences.getString(KEY_NAMA,null);
@@ -45,6 +49,13 @@ public class MenuGuru extends AppCompatActivity {
             Toast.makeText(MenuGuru.this, "Berhasil Logout",Toast.LENGTH_SHORT).show();
             finish();
         });
+
+        btnSekretaris.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuGuru.this, EditSekretaris.class);
+            startActivity(intent);
+        });
+
+
 
     }
 }

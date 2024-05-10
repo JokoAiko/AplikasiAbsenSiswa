@@ -58,6 +58,7 @@ public class LoginGuru extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putString(KEY_NAMA, etNama.getText().toString());
             editor.putString(KEY_NIP, etNIP.getText().toString());
+            editor.putString("Role", "guru");
             editor.putString(KEY_PASSWORD, etPassword.getText().toString());
             editor.apply();
 
@@ -78,6 +79,7 @@ public class LoginGuru extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),"Login Berhasil", Toast.LENGTH_SHORT).show();
                                 Intent login = new Intent(getApplicationContext(), MenuGuru.class);
                                 startActivity(login);
+                                finish();
                             } else {
                                 Toast.makeText(getApplicationContext(),"NIP atau password salah", Toast.LENGTH_SHORT).show();
                             }
