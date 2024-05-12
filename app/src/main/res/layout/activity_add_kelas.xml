@@ -2,11 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/img"
-    tools:context=".guru.MenuGuru">
+    tools:context=".guru.AddKelas">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -58,47 +59,53 @@
 
     </LinearLayout>
 
-
-    <Button
-        android:layout_width="350dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="center"
-        android:text="Riwayat Absen"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppins_bold"
-        android:background="@drawable/button_rounded"/>
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Kelas"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="90dp"/>
 
-    <Button
-        android:id="@+id/btnSekretaris"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_rounded"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Lihat Sekretaris"
-        android:textColor="@color/white" />
+        <EditText
+            android:id="@+id/textKelas"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/roundedbox"
+            android:inputType="text"
+            android:hint="Masukkan Jurusan Kelas"
+            android:textAlignment="center"/>
 
-    <Button
-        android:id="@+id/btnKelas"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/button_rounded"
-        android:fontFamily="@font/poppins_bold"
-        android:text="Edit Kelas"
-        android:textColor="@color/white" />
+        <EditText
+            android:id="@+id/textJurusan"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/roundedbox"
+            android:inputType="text"
+            android:hint="Masukkan Kelas Disini"
+            android:textAlignment="center"/>
 
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"
-        android:text="Absensi Siswa"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppins_bold"
-        android:background="@drawable/button_rounded"/>
+        <Button
+            android:id="@+id/submitKelas"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="Add"
+            android:textColor="@android:color/white"
+            android:background="@drawable/button_rounded" />
+
+    </LinearLayout>
 
 </LinearLayout>

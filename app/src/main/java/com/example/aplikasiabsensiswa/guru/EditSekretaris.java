@@ -2,18 +2,14 @@ package com.example.aplikasiabsensiswa.guru;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.aplikasiabsensiswa.Classes.Sekretaris;
 import com.example.aplikasiabsensiswa.R;
-import com.google.firebase.Firebase;
+import com.example.aplikasiabsensiswa.guru.Adapter.EditSekretarisAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +31,7 @@ public class EditSekretaris extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_sekretaris);
 
-        recyclerView = findViewById(R.id.recycler);
+        recyclerView = findViewById(R.id.kelasRecycler);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

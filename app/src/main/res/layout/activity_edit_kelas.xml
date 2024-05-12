@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@drawable/img"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/img"
+    android:orientation="vertical"
     tools:context=".guru.EditSekretaris">
 
     <LinearLayout
@@ -17,17 +17,17 @@
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
             android:layout_gravity="center"
-            android:src="@drawable/img_1"/>
+            android:layout_marginStart="16dp"
+            android:src="@drawable/img_1" />
 
         <LinearLayout
             android:layout_width="150dp"
             android:layout_height="70dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="25dp"
-            android:padding="2dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="2dp">
 
             <TextView
                 android:id="@+id/tvNama"
@@ -41,8 +41,8 @@
                 android:id="@+id/tvNIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:fontFamily="@font/poppins_bold" />
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/white" />
 
         </LinearLayout>
 
@@ -50,38 +50,45 @@
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
             android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/buttonout"
             android:text="logout"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:background="@drawable/buttonout"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/kelasRecycler"
             android:layout_width="match_parent"
-            android:layout_height="624dp"
+            android:layout_height="484dp"
             android:layout_marginTop="20dp"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp">
+            android:paddingStart="0dp"
+            android:paddingTop="20dp"
+            android:paddingEnd="0dp">
 
         </androidx.recyclerview.widget.RecyclerView>
 
         <Button
             android:id="@+id/addKelas"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            />
-    </RelativeLayout>
+            android:background="#406BC3"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:text="Add Kelas"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

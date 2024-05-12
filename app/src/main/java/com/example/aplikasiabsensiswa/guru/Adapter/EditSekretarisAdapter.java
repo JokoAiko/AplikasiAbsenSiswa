@@ -1,4 +1,4 @@
-package com.example.aplikasiabsensiswa.guru;
+package com.example.aplikasiabsensiswa.guru.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

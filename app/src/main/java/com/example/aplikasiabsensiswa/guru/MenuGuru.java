@@ -18,6 +18,8 @@ public class MenuGuru extends AppCompatActivity {
     Button btnLogout;
 
     Button btnSekretaris;
+
+    Button btnEditKelas;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_NAMA = "nama";
@@ -33,6 +35,7 @@ public class MenuGuru extends AppCompatActivity {
         tvNIP = findViewById(R.id.tvNIP);
         btnLogout = findViewById(R.id.btnLogout);
         btnSekretaris = findViewById(R.id.btnSekretaris);
+        btnEditKelas = findViewById(R.id.btnKelas);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String nama = sharedPreferences.getString(KEY_NAMA,null);
@@ -52,6 +55,11 @@ public class MenuGuru extends AppCompatActivity {
 
         btnSekretaris.setOnClickListener(v -> {
             Intent intent = new Intent(MenuGuru.this, EditSekretaris.class);
+            startActivity(intent);
+        });
+
+        btnEditKelas.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuGuru.this, EditKelas.class);
             startActivity(intent);
         });
 
