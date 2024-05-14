@@ -11,11 +11,10 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.aplikasiabsensiswa.R;
-import com.example.aplikasiabsensiswa.sekretaris.LoginSekretaris;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterSekretaris extends AppCompatActivity {
+public class TambahSekretaris extends AppCompatActivity {
 
     private EditText etNama, etNIS, etEmail, etPassword;
     private Button btnDaftar;
@@ -25,7 +24,7 @@ public class RegisterSekretaris extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_sekretaris);
+        setContentView(R.layout.activity_tambah_sekretaris);
 
         etNama = findViewById(R.id.etNama);
         etNIS =findViewById(R.id.etNIS);

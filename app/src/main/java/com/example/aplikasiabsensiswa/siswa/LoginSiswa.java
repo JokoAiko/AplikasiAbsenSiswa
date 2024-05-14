@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.aplikasiabsensiswa.R;
-import com.example.aplikasiabsensiswa.sekretaris.RegisterSekretaris;
 import com.example.aplikasiabsensiswa.guru.MenuGuru;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,7 +20,7 @@ public class LoginSiswa extends AppCompatActivity {
 
 
     private EditText etNama, etNIS, etPassword;
-    private Button btnLogin, btnDaftar;
+    private Button btnLogin;
     SharedPreferences sharedPreferences;
     private DatabaseReference database;
     private static final String SHARED_PREF_NAME = "mypref";
@@ -35,7 +34,6 @@ public class LoginSiswa extends AppCompatActivity {
         setContentView(R.layout.activity_login_siswa);
 
         btnLogin = findViewById(R.id.btnLogin);
-        btnDaftar = findViewById(R.id.btnDaftar);
         etNama = findViewById(R.id.etNama);
         etNIS = findViewById(R.id.etNIS);
         etPassword = findViewById(R.id.etPassword);
@@ -49,10 +47,6 @@ public class LoginSiswa extends AppCompatActivity {
             startActivity(intent);
         }
 
-        btnDaftar.setOnClickListener(v -> {
-            Intent intent2 = new Intent(LoginSiswa.this, RegisterSekretaris.class);
-            startActivity(intent2);
-        });
 
         btnLogin.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();

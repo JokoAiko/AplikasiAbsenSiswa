@@ -10,16 +10,14 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aplikasiabsensiswa.HalamanAwal;
 import com.example.aplikasiabsensiswa.R;
+import com.example.aplikasiabsensiswa.Riwayat;
 
 public class MenuGuru extends AppCompatActivity {
 
-    TextView tvNama, tvNIP;
-    Button btnLogout;
-
-    Button btnSekretaris;
-
-    Button btnEditKelas;
+    private TextView tvNama, tvNIP;
+    private Button btnSekretaris, btnEditKelas, btnRiwayat;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_NAMA = "nama";
@@ -33,9 +31,9 @@ public class MenuGuru extends AppCompatActivity {
 
         tvNama = findViewById(R.id.tvNama);
         tvNIP = findViewById(R.id.tvNIP);
-        btnLogout = findViewById(R.id.btnLogout);
         btnSekretaris = findViewById(R.id.btnSekretaris);
         btnEditKelas = findViewById(R.id.btnKelas);
+        btnRiwayat = findViewById(R.id.btnRiwayat);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String nama = sharedPreferences.getString(KEY_NAMA,null);
@@ -46,23 +44,18 @@ public class MenuGuru extends AppCompatActivity {
             tvNIP.setText(nip);
         }
 
-        btnLogout.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.commit();
-            Toast.makeText(MenuGuru.this, "Berhasil Logout",Toast.LENGTH_SHORT).show();
-            finish();
-        });
-
         btnSekretaris.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuGuru.this, EditSekretaris.class);
-            startActivity(intent);
+            Intent sekretaris = new Intent(MenuGuru.this, EditSekretaris.class);
+            startActivity(sekretaris);
         });
-
         btnEditKelas.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuGuru.this, EditKelas.class);
-            startActivity(intent);
+            Intent editkelas = new Intent(MenuGuru.this, EditKelas.class);
+            startActivity(editkelas);
         });
-
+        btnRiwayat.setOnClickListener(v -> {
+            Intent riwayat = new Intent(MenuGuru.this, Riwayat.class);
+            startActivity(riwayat);
+        });
 
 
     }

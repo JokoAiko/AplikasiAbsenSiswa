@@ -60,7 +60,7 @@ public class EditKelasAdapter extends  RecyclerView.Adapter<EditKelasViewHolder>
         });
 
         holder.namaKelas.setText(kelas.Kelas + " " + kelas.Jurusan);
-        holder.countSiswa.setText("jumlah siswa : " + kelas.getStudentCount());
+        holder.countSiswa.setText("Siswa : " + kelas.getStudentCount());
     }
 
     @Override

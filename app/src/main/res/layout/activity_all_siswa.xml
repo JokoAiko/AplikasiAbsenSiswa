@@ -9,86 +9,56 @@
     android:orientation="vertical"
     tools:context=".guru.EditSekretaris">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:orientation="horizontal">
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:text="Daftar Siswa"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"/>
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/img_1" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="25dp"
-            android:orientation="vertical"
-            android:padding="2dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvNama"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/siswaRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="484dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="5dp"
+                tools:listitem="@layout/siswa_card">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/addSiswa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/tvNIP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/white" />
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounded"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="Add Siswa"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="40dp"
-            android:background="@drawable/buttonout"
-            android:text="logout"
-            android:textAlignment="center"
-            android:textColor="@color/white" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/siswaRecycler"
-            android:layout_width="match_parent"
-            android:layout_height="484dp"
-            android:layout_marginTop="20dp"
-            android:paddingStart="0dp"
-            android:paddingTop="20dp"
-            android:paddingEnd="0dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <Button
-            android:id="@+id/addSiswa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#406BC3"
-            android:gravity="center_horizontal"
-            android:padding="20dp"
-            android:text="Add Siswa"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF" />
-
-    </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

@@ -44,11 +44,6 @@ public class LoginGuru extends AppCompatActivity {
 
         String nama = sharedPreferences.getString(KEY_NAMA,null);
 
-        if (nama != null){
-            Intent intent = new Intent(LoginGuru.this, MenuGuru.class);
-            startActivity(intent);
-        }
-
         btnRegister.setOnClickListener(v -> {
             Intent intent2 = new Intent(LoginGuru.this, RegisterGuru.class);
             startActivity(intent2);

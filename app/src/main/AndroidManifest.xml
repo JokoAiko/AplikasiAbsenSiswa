@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.aplikasiabsensiswa" >
+    package="com.example.aplikasiabsensiswa">
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplikasiAbsenSiswa"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".Riwayat"
+            android:exported="false" />
         <activity
             android:name=".guru.Siswa.DetailedSiswa"
             android:exported="false" />
@@ -41,7 +44,7 @@
             android:name=".siswa.RegisterSiswa"
             android:exported="false" />
         <activity
-            android:name=".sekretaris.RegisterSekretaris"
+            android:name=".sekretaris.TambahSekretaris"
             android:exported="false" />
         <activity
             android:name=".guru.RegisterGuru"
@@ -63,7 +66,7 @@
             android:exported="false" /> <!-- MainActivity sebagai activity utama -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

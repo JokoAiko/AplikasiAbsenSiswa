@@ -169,7 +169,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:textSize="29sp"
-
                         android:text="female" />
                 </RadioGroup>
 
@@ -183,7 +182,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Adress"
+                    android:text="Alamat"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="@font/poppins"
@@ -218,7 +217,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginRight="30dp"
                     android:background="@drawable/button_rounded"
-                    android:backgroundTint="#673AB7"
+                    android:backgroundTint="#4CAF50"
                     android:text="Update"
                     android:textColor="@android:color/white" />
 
@@ -229,7 +228,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/button_rounded"
-                    android:backgroundTint="#FF3D00"
+                    android:backgroundTint="#FF0000"
                     android:text="Delete"
                     android:textColor="@android:color/white" />
 

@@ -34,6 +34,7 @@ public class EditKelas extends AppCompatActivity {
     private List<Kelas> allKelas;
 
     private EditKelasAdapter adapter;
+    
 
     private void getKelas(){
         DatabaseReference kelasRef = FirebaseDatabase.getInstance().getReference("Kelas");

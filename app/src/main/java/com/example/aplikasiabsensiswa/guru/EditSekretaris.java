@@ -1,5 +1,6 @@
 package com.example.aplikasiabsensiswa.guru;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ public class EditSekretaris extends AppCompatActivity {
     private EditSekretarisAdapter adapter;
 
     private RecyclerView recyclerView;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

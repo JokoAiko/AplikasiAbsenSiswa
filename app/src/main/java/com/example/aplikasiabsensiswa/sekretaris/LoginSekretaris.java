@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginSekretaris extends AppCompatActivity {
 
-    private Button btnLogin, btnRegister;
+    private Button btnLogin;
 
     private EditText etNama, etNIS, etPassword;
     SharedPreferences sharedPreferences;
@@ -35,7 +35,6 @@ public class LoginSekretaris extends AppCompatActivity {
         setContentView(R.layout.activity_login_sekretaris2);
 
         btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
         etNama = findViewById(R.id.etNama);
         etNIS = findViewById(R.id.etNIS);
         etPassword = findViewById(R.id.etPassword);
@@ -48,11 +47,6 @@ public class LoginSekretaris extends AppCompatActivity {
             Intent intent = new Intent(LoginSekretaris.this, MenuGuru.class);
             startActivity(intent);
         }
-
-        btnRegister.setOnClickListener(v -> {
-            Intent intent2 = new Intent(LoginSekretaris.this, RegisterSekretaris.class);
-            startActivity(intent2);
-        });
 
         btnLogin.setOnClickListener(v -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();

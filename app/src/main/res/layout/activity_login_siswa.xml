@@ -51,44 +51,16 @@
         android:hint="Masukkan Password"
         android:textAlignment="center"/>
 
-    <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Belum punya akun? Daftar dulu yuk!"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Login"
+        android:textColor="@android:color/white"
         android:fontFamily="@font/poppins_bold"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:gravity="center_horizontal">
-
-        <!-- Login Button -->
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="@android:color/white"
-            android:background="@drawable/button_rounded"
-            android:layout_marginEnd="40dp"/>
-
-        <!-- Register Button -->
-        <Button
-            android:id="@+id/btnDaftar"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="daftar"
-            android:textColor="@android:color/white"
-            android:background="@drawable/button_rounded"/>
-
-    </LinearLayout>
-
 
 
 </LinearLayout>
