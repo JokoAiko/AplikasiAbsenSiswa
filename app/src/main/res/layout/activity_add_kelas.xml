@@ -62,6 +62,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
         >
         <TextView
@@ -74,27 +75,57 @@
             android:layout_gravity="center"
             android:layout_marginTop="90dp"/>
 
-        <EditText
-            android:id="@+id/textKelas"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/roundedbox"
-            android:inputType="text"
-            android:hint="Masukkan Jurusan Kelas"
-            android:textAlignment="center"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kelas"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins"
+                android:layout_gravity="left"
+                android:layout_marginTop="30dp"/>
 
-        <EditText
-            android:id="@+id/textJurusan"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/roundedbox"
-            android:inputType="text"
-            android:hint="Masukkan Kelas Disini"
-            android:textAlignment="center"/>
+            <EditText
+                android:id="@+id/textKelas"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/roundedbox"
+                android:inputType="text"
+                android:hint="Ex : 10, 11, 12"
+                android:textAlignment="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jurusan"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/poppins"
+                android:layout_gravity="left"
+                android:layout_marginTop="30dp"/>
+
+            <EditText
+                android:id="@+id/textJurusan"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/roundedbox"
+                android:inputType="text"
+                android:hint="Ex : RPL 1, TKJ 2, DKV 1"
+                android:textAlignment="center"/>
+        </LinearLayout>
 
         <Button
             android:id="@+id/submitKelas"

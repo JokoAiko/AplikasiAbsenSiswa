@@ -28,6 +28,7 @@ public class AddKelas extends AppCompatActivity {
     Button addButton;
     EditText editText;
     EditText editText2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -51,6 +51,7 @@ public class EditKelas extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot siswaSnapshot) {
                             long count = siswaSnapshot.getChildrenCount();
                             kelas.setStudentCount(count);
+                            kelas.setKelasKey(kelasData.getKey());
                             allKelas.add(kelas);
                             adapter.notifyDataSetChanged();
 
@@ -95,6 +96,9 @@ public class EditKelas extends AppCompatActivity {
             @Override
             public void onItemClick(Kelas kelas) {
                 Intent intent = new Intent(EditKelas.this, DetailedKelas.class);
+                intent.putExtra("kelasKey",kelas.getKelasKey());
+                intent.putExtra("kelas",kelas.Kelas);
+                intent.putExtra("jurusan",kelas.Jurusan);
                 startActivity(intent);
             }
         });

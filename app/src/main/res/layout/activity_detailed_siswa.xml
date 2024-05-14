@@ -73,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Kelas Kelas"
-                android:id="@+id/detailedKelasTitle"
+                android:id="@+id/detailedSiswaTitle"
                 android:textColor="@color/black"
                 android:textSize="36sp"
                 android:fontFamily="@font/poppins_bold"
@@ -87,7 +87,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="kelas"
+                    android:text="NISN"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="@font/poppins"
@@ -95,14 +95,14 @@
                     android:layout_marginTop="30dp"/>
 
                 <EditText
-                    android:id="@+id/textDetailedKelas"
+                    android:id="@+id/textNisSiswaUpdate"
                     android:layout_width="350dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/roundedbox"
                     android:inputType="text"
-                    android:hint="Ex : 10, 11, 12"
+                    android:hint="Input NISN"
                     android:textAlignment="center"/>
             </LinearLayout>
 
@@ -113,7 +113,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="jurusan"
+                    android:text="Nama"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="@font/poppins"
@@ -121,14 +121,84 @@
                     android:layout_marginTop="30dp"/>
 
                 <EditText
-                    android:id="@+id/textDetailedJurusan"
+                    android:id="@+id/textNamaSiswaUpdate"
                     android:layout_width="350dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/roundedbox"
                     android:inputType="text"
-                    android:hint="Ex : RPL 1, DKV 2, EI 2"
+                    android:hint="Input Nama"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"/>
+
+                <RadioGroup
+                    android:layout_width="350dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/genderGroupUpdate"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:orientation="vertical"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/maleUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="29sp"
+                        android:text="male" />
+
+                    <RadioButton
+                        android:id="@+id/femaleUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:textSize="29sp"
+
+                        android:text="female" />
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adress"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"/>
+
+                <EditText
+                    android:id="@+id/textAddressSiswaUpdate"
+                    android:layout_width="350dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/roundedbox"
+                    android:inputType="text"
+                    android:hint="Input Alamat"
                     android:textAlignment="center"/>
             </LinearLayout>
 
@@ -141,7 +211,7 @@
                 >
 
                 <Button
-                    android:id="@+id/updateKelas"
+                    android:id="@+id/btnUpdateSiswa"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -153,7 +223,7 @@
                     android:textColor="@android:color/white" />
 
                 <Button
-                    android:id="@+id/deleteKelas"
+                    android:id="@+id/btnDeleteSiswa"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -165,37 +235,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="90dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="Data Kelas"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
-
-            <Button
-                android:id="@+id/lihatSekretaris"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button_rounded"
-                android:backgroundTint="#68544D"
-                android:text="Lihat Sekretaris"
-                android:textColor="@android:color/white" />
-
-            <Button
-                android:id="@+id/lihatSiswa"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/button_rounded"
-                android:backgroundTint="#68544D"
-                android:text="Lihat Siswa"
-                android:textColor="@android:color/white" />
 
         </LinearLayout>
 

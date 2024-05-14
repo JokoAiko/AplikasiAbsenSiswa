@@ -8,6 +8,8 @@ public class Kelas {
 
     public Long studentCount;
 
+    private String kelasKey;
+
     // Make sure the 's' in 'studentCount' is lowercase
     public void setStudentCount(Long studentCount) {
         this.studentCount = studentCount;
@@ -17,6 +19,10 @@ public class Kelas {
     public Long getStudentCount() {
         return this.studentCount;
     }
+
+    public void setKelasKey(String kelasKey){this.kelasKey = kelasKey;}
+
+    public String getKelasKey(){return  this.kelasKey;}
 
     public Kelas(){
 
