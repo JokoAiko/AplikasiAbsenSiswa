@@ -33,7 +33,7 @@ public class EditSekretaris extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_sekretaris);
 
-        recyclerView = findViewById(R.id.kelasRecycler);
+        recyclerView = findViewById(R.id.recyclerSekretaris);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

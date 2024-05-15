@@ -5,6 +5,8 @@ public class Siswa {
     public String address;
     public String gender;
 
+    private Boolean isCheked = false;
+
     public String nama;
 
     private String password;
@@ -18,6 +20,14 @@ public class Siswa {
         this.address = address;
         this.gender = gender;
         this.nama = nama;
+    }
+
+    public boolean isChecked(){
+        return  this.isCheked;
+    }
+
+    public void setCheked(boolean cheked){
+        isCheked = cheked;
     }
 
     public String getNis() {

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    android:orientation="vertical"
+    tools:context=".guru.Absen.AbsenSiswa">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:text="Daftar Siswa"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jam ke"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"/>
+
+                <EditText
+                    android:id="@+id/textJamKe"
+                    android:layout_width="350dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/roundedbox"
+                    android:inputType="text"
+                    android:hint="Ex : 10, 11, 12"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sampai Jam Ke"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/poppins"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="30dp"/>
+
+                <EditText
+                    android:id="@+id/textSampaiJamKe"
+                    android:layout_width="350dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/roundedbox"
+                    android:inputType="text"
+                    android:hint="Ex : 10, 11, 12"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/absenSiswaRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="484dp"
+                android:layout_gravity="center"
+                android:paddingStart="5dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="5dp"
+                tools:listitem="@layout/absen_card">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/submitAbsenSiswaButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/button_rounded"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="Submit Absensi"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

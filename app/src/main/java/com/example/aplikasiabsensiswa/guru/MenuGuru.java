@@ -13,11 +13,13 @@ import android.widget.Toast;
 import com.example.aplikasiabsensiswa.HalamanAwal;
 import com.example.aplikasiabsensiswa.R;
 import com.example.aplikasiabsensiswa.Riwayat;
+import com.example.aplikasiabsensiswa.guru.Absen.AbsenKelas;
+import com.example.aplikasiabsensiswa.guru.Absen.AbsenSiswa;
 
 public class MenuGuru extends AppCompatActivity {
 
     private TextView tvNama, tvNIP;
-    private Button btnSekretaris, btnEditKelas, btnRiwayat;
+    private Button btnSekretaris, btnEditKelas, btnRiwayat, btnAbsen;
     SharedPreferences sharedPreferences;
     private static final String SHARED_PREF_NAME = "mypref";
     private static final String KEY_NAMA = "nama";
@@ -34,6 +36,8 @@ public class MenuGuru extends AppCompatActivity {
         btnSekretaris = findViewById(R.id.btnSekretaris);
         btnEditKelas = findViewById(R.id.btnKelas);
         btnRiwayat = findViewById(R.id.btnRiwayat);
+        btnAbsen = findViewById(R.id.btnAbsen);
+
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
         String nama = sharedPreferences.getString(KEY_NAMA,null);
@@ -55,6 +59,10 @@ public class MenuGuru extends AppCompatActivity {
         btnRiwayat.setOnClickListener(v -> {
             Intent riwayat = new Intent(MenuGuru.this, Riwayat.class);
             startActivity(riwayat);
+        });
+        btnAbsen.setOnClickListener(v -> {
+            Intent absen = new Intent(MenuGuru.this, AbsenKelas.class);
+            startActivity(absen);
         });
 
 

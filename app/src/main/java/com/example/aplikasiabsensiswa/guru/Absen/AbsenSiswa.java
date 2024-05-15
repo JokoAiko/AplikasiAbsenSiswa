@@ -1,8 +1,11 @@
-package com.example.aplikasiabsensiswa.guru.Siswa;
+package com.example.aplikasiabsensiswa.guru.Absen;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -13,8 +16,10 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.aplikasiabsensiswa.Classes.Absen;
 import com.example.aplikasiabsensiswa.Classes.Siswa;
 import com.example.aplikasiabsensiswa.R;
+import com.example.aplikasiabsensiswa.guru.Adapter.AbsenSiswaAdapter;
 import com.example.aplikasiabsensiswa.guru.Adapter.SiswaAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,19 +28,31 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllSiswa extends AppCompatActivity {
-
+public class AbsenSiswa extends AppCompatActivity {
     public List<Siswa> allSiswa;
 
     public DatabaseReference siswaRef = FirebaseDatabase.getInstance().getReference("Siswa");
+    public DatabaseReference absenRef = FirebaseDatabase.getInstance().getReference("Absen");
 
     RecyclerView recyclerView;
 
-    SiswaAdapter siswaAdapter;
+    AbsenSiswaAdapter absenAdapter;
 
+    public String getCheckedSiswa() {
+        List<String> checkedSiswa = new ArrayList<>();
+        for (Siswa siswa : allSiswa) {
+            if (siswa.isChecked()) {
+                checkedSiswa.add(siswa.getNama());
+            }
+        }
+        return String.join(", ", checkedSiswa);
+    }
 
     public void getAllSiswa(Intent intent) {
         Query query = siswaRef.orderByChild("kelas_id").equalTo(intent.getStringExtra("kelasKey"));
@@ -46,10 +63,10 @@ public class AllSiswa extends AppCompatActivity {
                 allSiswa.clear();
                 for (DataSnapshot siswaSnapshot : snapshot.getChildren()) {
                     Siswa siswa = siswaSnapshot.getValue(Siswa.class);
-                    siswa.setKey(siswaSnapshot.getKey());
+                    Log.d("key", siswa.getNama());
                     allSiswa.add(siswa);
                 }
-                siswaAdapter.notifyDataSetChanged();
+                absenAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -64,40 +81,36 @@ public class AllSiswa extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_all_siswa);
+        setContentView(R.layout.activity_absen_siswa);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        allSiswa = new ArrayList<>();
-        Intent intent = getIntent();
-        recyclerView = findViewById(R.id.siswaRecycler);
+        recyclerView = findViewById(R.id.absenSiswaRecyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        siswaAdapter = new SiswaAdapter(allSiswa, new SiswaAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Siswa siswa) {
-                Intent detailedIntent = new Intent(AllSiswa.this, DetailedSiswa.class);
-                detailedIntent.putExtra("siswaNama", siswa.getNama());
-                detailedIntent.putExtra("siswaNis", siswa.getNis());
-                detailedIntent.putExtra("siswaAddress", siswa.getAddress());
-                detailedIntent.putExtra("kelasKey", intent.getStringExtra("kelasKey"));
-                detailedIntent.putExtra("siswaKey", siswa.getKey());
-                detailedIntent.putExtra("siswaGender", siswa.getGender());
-                startActivity(detailedIntent);
-            }
-        });
-        recyclerView.setAdapter(siswaAdapter);
+        allSiswa = new ArrayList<>();
+        absenAdapter = new AbsenSiswaAdapter(allSiswa);
+        recyclerView.setAdapter(absenAdapter);
+        Intent intent = getIntent();
+        Log.d("key", intent.getStringExtra("kelasKey"));
         getAllSiswa(intent);
 
-        Button addButton = findViewById(R.id.addSiswa);
-        addButton.setOnClickListener(v -> {
-            Intent intent1 = new Intent(AllSiswa.this, AddSiswa.class);
-            intent1.putExtra("kelasKey", intent.getStringExtra("kelasKey"));
-            startActivity(intent1);
-        });
+        Button button = findViewById(R.id.submitAbsenSiswaButton);
+        EditText textJamKe = findViewById(R.id.textJamKe);
+        EditText sampaiJamKe = findViewById(R.id.textSampaiJamKe);
+        SimpleDateFormat dtf = new SimpleDateFormat("dd/MM/yyyy");
+        String date = dtf.format(new java.util.Date());
+        SharedPreferences sharedPreferences = getSharedPreferences("mypref",MODE_PRIVATE);
+        String nip = sharedPreferences.getString("nip",null);
 
+        button.setOnClickListener(v -> {
+            Absen absen = new Absen(Integer.parseInt(textJamKe.getText().toString()), getIntent().getStringExtra("kelasKey"), nip, Integer.parseInt(sampaiJamKe.getText().toString()), getCheckedSiswa(), date);
+            DatabaseReference newAbsenRef = absenRef.push();
+            newAbsenRef.setValue(absen);
+            finish();
+        });
     }
 }
